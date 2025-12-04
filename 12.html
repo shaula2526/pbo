@@ -1,24 +1,42 @@
-console.log("from script file");
-body {
-  margin: 20px;
-}
-          
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUI Sederhana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>GUI Sederhana</title>
 </head>
 <body>
-    <h1 id="title">Halo, shaula!</h1>
+<h1 id="title">Halo, shaula!</h1>
+<h2>Halo, Mahasiswa!</h2>
+<b> tebal</b>
+<i> miring</i>
+    <ol>
+      <li>satu</li>
+      <li>dua</li>
+    </ol>
+  <table>
+<tr>  <td> 1 </td>  <td> 2 </td></tr>
+<tr>  <td> 3 </td>  <td> 4 </td></tr>  
+  </table>
 
-    <button onclick="ubahTeks()">Klik Saya</button>
+<img src='https://avatars.githubusercontent.com/u/13969367?v=4'>
 
-    <script>
-        function ubahTeks() {
-            document.getElementById("title").innerText = "Teks telah berubah!";
-        }
-    </script>
+  <form>
+<input type='text' value='cobaan'>
+<input type='submit' value='kirim'>
+    
+  </form>
+
+
+  
+<button onclick="ubahTeks()">Klik Saya</button>
+
+  
+<script>
+function ubahTeks() {
+document.getElementById("title").innerText = "Teks telah berubah!";
+}
+</script>
 </body>
 </html>
