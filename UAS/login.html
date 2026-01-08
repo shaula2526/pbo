@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <!-- LOGIN -->
+    <!-- LOGIN BOX -->
     <div class="card" id="loginBox">
         <h2>Login Sistem</h2>
         <p class="subtitle">Silakan login untuk melanjutkan</p>
@@ -26,15 +26,19 @@
             </div>
 
             <button type="submit">Login</button>
+            <button type="button" class="cancel" onclick="cancelLogin()">Cancel</button>
+
             <p id="error" class="error"></p>
         </form>
     </div>
 
-    <!-- WELCOME -->
+    <!-- WELCOME BOX -->
     <div class="card welcome" id="welcomeBox">
-        <h2>Hallo admin 👋</h2>
+        <h2>Hallo Admin 👋</h2>
         <p>Selamat datang di Sistem Informasi</p>
         <small>Login berhasil</small>
+
+        <button class="logout" onclick="logout()">Logout</button>
     </div>
 
 </div>
@@ -49,11 +53,23 @@ function login() {
     if (user === "admin" && pass === "shaula123") {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("welcomeBox").style.display = "block";
+        error.innerText = "";
     } else {
         error.innerText = "Username atau password salah!";
     }
-
     return false;
+}
+
+function cancelLogin() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("error").innerText = "";
+}
+
+function logout() {
+    document.getElementById("welcomeBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+    cancelLogin();
 }
 </script>
 
