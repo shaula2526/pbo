@@ -32,7 +32,7 @@
 
     <!-- WELCOME -->
     <div class="card welcome" id="welcomeBox">
-        <h2>Hallo user 👋</h2>
+        <h2>Hallo admin 👋</h2>
         <p>Selamat datang di Sistem Informasi</p>
         <small>Login berhasil</small>
     </div>
@@ -46,7 +46,7 @@ function login() {
     const error = document.getElementById("error");
 
     // akun dummy
-    if (user === "user" && pass === "shaula123") {
+    if (user === "admin" && pass === "shaula123") {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("welcomeBox").style.display = "block";
     } else {
