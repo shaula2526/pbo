@@ -92,18 +92,32 @@ body {
 button {
     width: 100%;
     padding: 12px;
-    background: #667eea;
+    margin-top: 10px;
     border: none;
     border-radius: 8px;
-    color: white;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
+button[type="submit"] {
+    background: #667eea;
+    color: white;
+}
+
+button[type="submit"]:hover {
     background: #5a67d8;
     transform: translateY(-2px);
+}
+
+/* CANCEL */
+.cancel {
+    background: #ccc;
+    color: #333;
+}
+
+.cancel:hover {
+    background: #b5b5b5;
 }
 
 /* ERROR */
@@ -129,4 +143,15 @@ button:hover {
     display: block;
     margin-top: 15px;
     color: #999;
+}
+
+/* LOGOUT */
+.logout {
+    margin-top: 25px;
+    background: #e74c3c;
+    color: white;
+}
+
+.logout:hover {
+    background: #c0392b;
 }
