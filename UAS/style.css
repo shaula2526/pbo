@@ -15,15 +15,16 @@ body {
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     padding: 20px;
 }
 
-.login-card {
+/* CARD */
+.card {
     background: white;
     padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     animation: fadeIn 0.8s ease;
 }
 
@@ -38,7 +39,7 @@ body {
     }
 }
 
-.login-card h2 {
+.card h2 {
     text-align: center;
     margin-bottom: 8px;
 }
@@ -50,6 +51,7 @@ body {
     margin-bottom: 25px;
 }
 
+/* INPUT */
 .input-group {
     position: relative;
     margin-bottom: 25px;
@@ -60,16 +62,16 @@ body {
     padding: 10px;
     border: none;
     border-bottom: 2px solid #ccc;
-    outline: none;
     font-size: 15px;
+    outline: none;
 }
 
 .input-group label {
     position: absolute;
     top: 50%;
     left: 5px;
-    color: #999;
     font-size: 14px;
+    color: #999;
     transform: translateY(-50%);
     pointer-events: none;
     transition: 0.3s;
@@ -86,6 +88,7 @@ body {
     color: #667eea;
 }
 
+/* BUTTON */
 button {
     width: 100%;
     padding: 12px;
@@ -103,9 +106,27 @@ button:hover {
     transform: translateY(-2px);
 }
 
-.hint {
-    margin-top: 20px;
+/* ERROR */
+.error {
+    margin-top: 10px;
     text-align: center;
-    font-size: 12px;
-    color: #aaa;
+    color: red;
+    font-size: 13px;
+}
+
+/* WELCOME */
+.welcome {
+    display: none;
+    text-align: center;
+}
+
+.welcome p {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.welcome small {
+    display: block;
+    margin-top: 15px;
+    color: #999;
 }
