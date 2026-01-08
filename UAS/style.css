@@ -88,41 +88,46 @@ body {
     color: #667eea;
 }
 
-/* BUTTON */
-button {
-    width: 100%;
-    padding: 12px;
+/* BUTTON GROUP (SEJAJAR) */
+.button-group {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button[type="submit"] {
+/* LOGIN */
+.btn-login {
     background: #667eea;
     color: white;
 }
 
-button[type="submit"]:hover {
+.btn-login:hover {
     background: #5a67d8;
-    transform: translateY(-2px);
 }
 
 /* CANCEL */
-.cancel {
+.btn-cancel {
     background: #ccc;
     color: #333;
 }
 
-.cancel:hover {
+.btn-cancel:hover {
     background: #b5b5b5;
 }
 
 /* ERROR */
 .error {
-    margin-top: 10px;
+    margin-top: 12px;
     text-align: center;
     color: red;
     font-size: 13px;
@@ -146,11 +151,23 @@ button[type="submit"]:hover {
 }
 
 /* LOGOUT */
-.logout {
+.btn-logout {
     margin-top: 25px;
+    width: 100%;
+    padding: 12px;
     background: #e74c3c;
+    border: none;
+    border-radius: 8px;
     color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.btn-logout:hover {
+    background: #c0392b;
+}
+
 
 .logout:hover {
     background: #c0392b;
