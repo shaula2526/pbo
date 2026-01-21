@@ -2,188 +2,27 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Login Project Web Sederhana</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            width: 380px;
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .nama {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            width: 48%;
-            padding: 12px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .btn-login {
-            background: #4CAF50;
-        }
-
-        .btn-logout {
-            background: #f44336;
-        }
-
-        .btn-login:hover {
-            background: #43a047;
-        }
-
-        .btn-logout:hover {
-            background: #e53935;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .link {
-            margin-top: 15px;
-            font-size: 13px;
-            color: #007BFF;
-            cursor: pointer;
-        }
-
-        .link:hover {
-            text-decoration: underline;
-        }
-
-        .status {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .success {
-            color: green;
-        }
-
-        .error {
-            color: red;
-        }
-    </style>
+    <title>Login Web Sederhana</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
     <h2>Login Website</h2>
-    <div class="nama">Project Web Sederhana<br><b>Shaula O S Muliawan</b></div>
+    <p class="nama">Project Web Sederhana<br><b>Shaula O S Muliawan</b></p>
 
     <input type="text" id="username" placeholder="Username">
     <input type="password" id="password" placeholder="Password">
 
     <div class="button-group">
-        <button class="btn-login" onclick="app.login()">Login</button>
-        <button class="btn-logout" onclick="app.logout()">Logout</button>
+        <button id="loginBtn">Login</button>
+        <button id="logoutBtn">Logout</button>
     </div>
 
-    <div class="link" onclick="app.lupaPassword()">Lupa Password?</div>
-
-    <div class="status" id="status"></div>
+    <p class="link" id="lupaPassword">Lupa Password?</p>
+    <p id="status"></p>
 </div>
 
-<script>
-/* ==========================
-   CLASS USER (PBO)
-========================== */
-class User {
-    constructor(username, password) {
-        this.username = username;
-        this.password = password;
-    }
-}
-
-/* ==========================
-   CLASS AUTHENTICATION
-========================== */
-class Auth {
-    constructor() {
-        this.initUser();
-    }
-
-    initUser() {
-        if (!localStorage.getItem("user")) {
-            const defaultUser = new User("shaula", "12345");
-            localStorage.setItem("user", JSON.stringify(defaultUser));
-        }
-    }
-
-    login() {
-        const usernameInput = document.getElementById("username").value;
-        const passwordInput = document.getElementById("password").value;
-        const status = document.getElementById("status");
-
-        const storedUser = JSON.parse(localStorage.getItem("user"));
-
-        if (usernameInput === storedUser.username && passwordInput === storedUser.password) {
-            localStorage.setItem("loginStatus", "true");
-            status.innerHTML = "Login berhasil!";
-            status.className = "status success";
-        } else {
-            status.innerHTML = "Username atau password salah!";
-            status.className = "status error";
-        }
-    }
-
-    logout() {
-        const status = document.getElementById("status");
-        localStorage.removeItem("loginStatus");
-        status.innerHTML = "Logout berhasil!";
-        status.className = "status success";
-    }
-
-    lupaPassword() {
-        const storedUser = JSON.parse(localStorage.getItem("user"));
-        alert("Password anda adalah: " + storedUser.password);
-    }
-}
-
-/* ==========================
-   OBJECT APP
-========================== */
-const app = new Auth();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
